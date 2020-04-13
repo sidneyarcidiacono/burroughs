@@ -1,0 +1,16 @@
+h1 {
+  font-family: monospace;
+  font-size: 32px;
+  color: #401b1a;
+  text-align: center;
+  padding: 25px;
+}
+
+.content {
+  max-width: 500px;
+  margin: auto;
+}
+
+.background {
+  background-color: #8a8787;
+}
