@@ -1,16 +1,49 @@
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
 h1 {
-  font-family: monospace;
-  font-size: 32px;
-  color: #401b1a;
+  font-size: 42px;
+}
+
+section {
+  padding-top: 40px;
+  padding-bottom: 45px;
+}
+
+/* div containing input field */
+div {
   text-align: center;
-  padding: 25px;
+  height: 50px;
+}
+
+input[type="text"]:focus {
+  display: block;
+  margin: 0 auto;
+  width:300px;
+  height: 30px;
+  border: 2px black;
+  box-shadow: 0 0 0 3px black;
+}
+
+/*add button styling here*/
+
+#submit:focus {
+  shadow: 2px;
+  color: black;
 }
 
 .content {
   max-width: 500px;
   margin: auto;
+  color: #401b1a;
+  text-align: center;
+  padding: 25px;
+  font-family: Georgia;
 }
 
-.background {
+.bg_main {
   background-color: #8a8787;
+}
+
+.bg_mid {
+  background-color: #401b1a;
 }

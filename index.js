@@ -14,9 +14,9 @@ const trainingData = [
   "So cheat your landlord if you can and must, but do not try to shortchange the Muse. It cannot be done. You can't fake quality any more than you can fake a good meal."
 ];
 
-const net = new brain.recurrent.LSTM();
-net.train(trainingData, {
-  iterations: 1500,
-  errorThresh: 0.011,
-  // log: (stats) => console.log(stats)
-});
+// const net = new brain.recurrent.LSTM();
+// net.train(trainingData, {
+//   iterations: 1500,
+//   errorThresh: 0.011,
+//   // log: (stats) => console.log(stats)
+// });
