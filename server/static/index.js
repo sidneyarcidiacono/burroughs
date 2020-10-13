@@ -1,4 +1,4 @@
-const trainingData = [
+const data = [
   "Nobody owns life, but anyone who can pick up a frying pan owns death.",
   "Desperation is the raw material of drastic change. Only those who can leave behind everything they have ever believed in can hope to escape.",
   "Your mind will answer most questions if you learn to relax and wait for the answer.",
@@ -14,12 +14,19 @@ const trainingData = [
   "So cheat your landlord if you can and must, but do not try to shortchange the Muse. It cannot be done. You can't fake quality any more than you can fake a good meal."
 ];
 
-const net = new brain.recurrent.LSTM();
+const postTrainingData = () => {
+  axios({
+    "method": "POST",
+    "data": {"data": data},
+    "url": "http://localhost:5000/trainingdata"
+  })
+  .then(function (response) {
+    const trainingData = response.data.trainingdata
+    console.log(trainingData)
+  })
+  .catch(function (error) {
+    console.log(error)
+  })
+}
 
-net.train(trainingData, {
-  iterations: 1500,
-  errorThresh: 0.011,
-  log: (stats) => console.log(stats)
-});
-
-const askAQuestion = prompt('Ask Burroughs a Question')
+postTrainingData()

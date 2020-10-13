@@ -1,0 +1,27 @@
+{
+  "name": "burroughs-generator",
+  "version": "1.0.0",
+  "description": "Phrase generating neural net built with Brain.js, Flask, Python, and Axios",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sidneyarcidiacono/burroughs.git"
+  },
+  "keywords": [
+    "Neural",
+    "net",
+    "Brain.js"
+  ],
+  "author": "Sid Arcidiacono",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/sidneyarcidiacono/burroughs/issues"
+  },
+  "homepage": "https://github.com/sidneyarcidiacono/burroughs#readme",
+  "dependencies": {
+    "axios": "^0.20.0"
+  }
+}
