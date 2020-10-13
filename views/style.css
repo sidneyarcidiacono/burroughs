@@ -4,6 +4,10 @@ h1 {
   font-size: 42px;
 }
 
+h2 {
+  margin: 55px;
+}
+
 section {
   padding-top: 40px;
   padding-bottom: 45px;
@@ -17,7 +21,7 @@ div {
 
 input[type="text"]:focus {
   display: block;
-  margin: 0 auto;
+  margin: 25px;
   width:300px;
   height: 30px;
   border: 2px black;
