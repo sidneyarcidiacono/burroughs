@@ -1,7 +1,7 @@
 const trainingDataArr = []
 
 const config = {
-  hiddenLayers: [3], // array of ints for the sizes of the hidden layers in the network
+  hiddenLayers: [6, 6, 6], // array of ints for the sizes of the hidden layers in the network
   // activation: 'sigmoid', // supported activation types: ['sigmoid', 'relu', 'leaky-relu', 'tanh'],
   // leakyReluAlpha: 0.01, // supported for activation type 'leaky-relu'
 };
@@ -34,11 +34,11 @@ const trainNet = async () => {
 
   net.train(trainingDataArr, {
     iterations: 1500,
-    errorThresh: 0.011,
-    log: (stats) => console.log(stats)
+    errorThresh: 0.001,
+    // log: (stats) => console.log(stats)
   })
 
-  console.log(net.run({'Hello'}))
+  console.log(net.run('life'))
 }
 
 trainNet()
