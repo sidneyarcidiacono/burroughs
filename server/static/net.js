@@ -1,4 +1,16 @@
-
+const trainingData = () => {
+  axios({
+    "method": "GET",
+    "data": "trainingdata",
+    "url": "http://localhost:5000/gettrainingdata"
+  })
+  .then(response => {
+    console.log(response)
+  })
+  .catch(error => {
+    console.log(error)
+  })
+}
 
 const net = new brain.recurrent.LSTM();
 

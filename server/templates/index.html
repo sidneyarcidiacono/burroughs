@@ -4,6 +4,7 @@
     <script src="https://unpkg.com/brain.js@2.0.0-alpha.12/dist/brain-browser.min.js"></script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script type="text/javascript" src="{{ url_for('static', filename='index.js') }}" defer></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='net.js') }}" defer></script>
     <link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='style.css') }}"></link>
   </head>
 
@@ -23,7 +24,7 @@
     <div class="row">
       <figure class="col-sm-6">
         <form class="col-sm-6">
-          <input type="text" name="question">
+          <input type="text" name="question" id="question">
           <input type="submit" class="bg_mid">
         </form>
       </figure>
