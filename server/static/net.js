@@ -15,7 +15,7 @@ const getTrainingData = async () => {
     })
     if (res) {
       console.log(res)
-      trainingDataArr.push(res.data[0].trainingData.map(data => data.replace(/[.,\/#!$%\^&\*;:{}=\-_`~()]/g,"")))
+      trainingDataArr.push(res.data[0].trainingData.map(data => data.replace(/[.,\/#!$%\^&\*;:{}=\-_`~()]/g,"").))
       console.log(trainingDataArr)
     }
   }
