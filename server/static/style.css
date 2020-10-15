@@ -32,6 +32,10 @@ input [type=submit]:focus {
   color: black;
 }
 
+.invisible {
+  display: none;
+}
+
 .content {
   max-width: 500px;
   margin: auto;

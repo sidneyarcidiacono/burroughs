@@ -1,3 +1,6 @@
+const questionInput = document.getElementById('question')
+const submitQuestion = document.getElementById('submit-question')
+
 const trainingData = [
 "desperation is the raw material of drastic change",
 "when you stop growing you start dying",
@@ -108,15 +111,37 @@ const config = {
 
 const net = new brain.recurrent.LSTM(config)
 
+const trainNet = () => {
+  net.train(trainingData, {
+    iterations: 2000,
+    errorThresh: 0.011,
+    log: (stats) => console.log(stats)
+  })
+}
 
-// net.train(trainingData, {
-//   iterations: 2000,
-//   errorThresh: 0.011,
-//   log: (stats) => console.log(stats)
-// })
-//
-// console.log(net.run("i am"))
+async const runNet = input => {
+  await trainNet()
+  let showResponse = document.getElementById('response')
+  response = net.run(input)
+  showResponse.classList.remove('invisible')
+  showResponse.innerHTML = response
+
+}
+
+const takeQuestionHandler = () => {
+  console.log("clicked")
+  let userInput = document.getElementById('user-input')
+  let input = questionInput.value
+  runNet(input)
+  questionInput.style.display.toggle('none')
+  userInput.innerHTML = input
+
+}
+
+
 //
 //
 //
 // trainNet()
+
+submitQuestion.addEventListener('click', takeQuestionHandler)
