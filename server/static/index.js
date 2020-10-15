@@ -31,7 +31,53 @@ const trainingData = [
   "In Mexico your wishes have a dream power. When you want to see someone, he turns up",
   "The conversations had a nightmare flatness, talking dice spilled in the tube metal chairs, human aggregates disintegrating in cosmic insanity, random events in a dying universe.",
   "Perhaps all pleasure in only relief",
-  "Cat hate reflects an ugly, stupid, loutish, bigoted spirit."
+  "Cat hate reflects an ugly, stupid, loutish, bigoted spirit.",
+  "In deep sadness there is no place for sentimentality",
+  "Junk is the ideal product… the ultimate merchandise. No sales talk necessary. The client will crawl through a sewer and beg to buy.",
+  "Man is an artifact designed for space travel. He is not designed to remain in his present biologic state any more than a tadpole is designed to remain a tadpole.",
+  "Hustlers of the world, there is one mark you cannot beat: the mark inside.",
+  "Like all pure creatures, cats are practical.",
+  "Silence is only frightening to people who are compulsively verbalizing.",
+  "Sometimes paranoia’s just having all the facts.",
+  "The aim of education is the knowledge, not of facts, but of values.",
+  "The cat does not offer services. The cat offers itself. Of course he wants care and shelter. You don’t buy love for nothing.",
+  "There couldn’t be a society of people who didn’t dream. They’d be dead in two weeks.",
+  "The only possible ethic is to do what one wants to do.",
+  "Which came first the intestine or the tapeworm?",
+  "Your knowledge of what is going on can only be superficial and relative.",
+  "Anything that can be done chemically can be done by other means.",
+  "After one look at this planet any visitor from outer space would say ‘I want to see the manager.’",
+  "Artists to my mind are the real architects of change, and not the political legislators who implement change after the fact.",
+  "Black magic operates most effectively in preconscious, marginal areas. Casual curses are the most effective.",
+  "How I hate those who are dedicated to producing conformity.",
+  "Confusion hath fuck his masterpiece.",
+  "It is not the intensity but the duration of pain that breaks the will to resist.",
+  "Naked Mr. America, burning frantic with self bone love, screams out: 'My asshole confounds the Louvre! I fart ambrosia and shit pure gold turds! My cock spurts soft diamonds in the morning sunlight!'",
+  "The broken image of Man moves in minute by minute and cell by cell.... Poverty, hatred, war, police-criminals, bureaucracy, insanity, all symptoms of The Human Virus.",
+  "O death where is thy sting? The man is never on time...",
+  "The boys eat happily looking into each other’s eyes. Blood runs down their chins.",
+  "The step into space is a step into the unknown, a change as drastic as the transition from water to land.",
+  "1. Never give anything away for nothing. 2. Never give more than you have to (always catch the buyer hungry and always make him wait). 3. Always take back everything if you possibly can.",
+  "All writing is in fact cut-ups. A collage of words read heard overheard. What else?",
+  "I think if a writer is not endeavoring to expand and alter consciousness in himself and in his readers, he is not doing much of anything.",
+  "Most people don't see what's going on around them. That's my principal message to writers: 'For God's sake, keep your eyes open. Notice what's going on around you.'",
+  "A phenomenon must be to some extent comprehensible to be perceived at all.",
+  "The Orgasmic Death Gimmick is rather complicated. It could be called the whole birth-death cycle of action, persuading people that birth and death are realities.",
+  "I had the feeling that some horrible image was just beyond the field of vision, moving, as I turned my head, so that I never quite saw it.",
+  "Who was I? The stranger was footsteps in the snow a long time ago.",
+  "As soon as you know you are in prison, you have a possibility to escape.",
+  "The young are an alien species. They won't replace us by revolution. They will forget and ignore us out of existence.",
+  "Dream long enough and dream hard enough you will come to know dreaming can make it so...",
+  "The self is like a pimping blackmailing chauffeur who gets you from here to there on word lines.",
+  "It is the function of the Guardian to protect hybrids and mutants in the vulnerable stage of infancy.",
+  "Last night I encountered a dream cat with a very long neck and a body like a human fetus, gray and transluscent. I don't know what it needs or how to provide for it. Another dream years ago of a human child with eyes on stalks.",
+  "Communication must become total and conscious before we can stop it.",
+  "Americans have a special horror of giving up control, of letting things happen in their own way without interference.",
+  "Look at these poisonous color maps where flesh trees grow from human sacrifices; listen to these sniggering half-heard words of tenderness and doom from lips spotted with decay",
+  "How far would people get in physics if discovery was described as disgusting - 'Your formula is disgusting and filthy'? Not very far.",
+  "He who has learned to do nothing with his whole mind and body will have everything done for him.",
+  "I project myself out through the glasses and across the street, a ghost in the morning sunlight, torn with disembodied lust.",
+  "To concern yourself with surface political conflicts is to make the mistake of the bull in the ring, you are charging the cloth."
 ]
 
 const postTrainingData = () => {
@@ -48,4 +94,4 @@ const postTrainingData = () => {
   })
 }
 
-// postTrainingData()
+postTrainingData()

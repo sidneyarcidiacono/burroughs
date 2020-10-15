@@ -1,7 +1,7 @@
 const trainingDataArr = []
 
 const config = {
-  hiddenLayers: [6, 6, 6], // array of ints for the sizes of the hidden layers in the network
+  hiddenLayers: [3], // array of ints for the sizes of the hidden layers in the network
 };
 
 const getTrainingData = async () => {
@@ -15,6 +15,8 @@ const getTrainingData = async () => {
       console.log(res)
       trainingDataArr.push(res.data[0].trainingData.map(data => data.replace(/[.,\/#!$%\^&\*;:{}=\-_`~()]/g,"")))
       console.log(trainingDataArr)
+      output = trainingDataArr.filter(output => output.length < 70)
+      console.log(output)
     }
   }
   catch (error) {
@@ -27,15 +29,15 @@ const trainNet = async () => {
   await getTrainingData()
   const net = new brain.recurrent.LSTM(config)
 
-  console.log(`Console logging net ${Object.keys(net)}`)
-
   net.train(trainingDataArr, {
-    iterations: 1500,
+    iterations: 3000,
     errorThresh: 0.011,
     log: (stats) => console.log(stats)
   })
+  // console.log(trainingDataArr)
+  output = net.run('Life is')
 
-  // console.log(net.run('life'))
+  console.log(output)
 }
 
 trainNet()
