@@ -113,19 +113,18 @@ const net = new brain.recurrent.LSTM(config)
 
 const trainNet = () => {
   net.train(trainingData, {
-    iterations: 2000,
+    iterations: 1500,
     errorThresh: 0.011,
     log: (stats) => console.log(stats)
   })
 }
 
-async const runNet = input => {
+async function runNet(input) {
   await trainNet()
   let showResponse = document.getElementById('response')
   response = net.run(input)
   showResponse.classList.remove('invisible')
-  showResponse.innerHTML = response
-
+  showResponse.innerHTML = `${response}`
 }
 
 const takeQuestionHandler = () => {
@@ -133,9 +132,9 @@ const takeQuestionHandler = () => {
   let userInput = document.getElementById('user-input')
   let input = questionInput.value
   runNet(input)
-  questionInput.style.display.toggle('none')
-  userInput.innerHTML = input
-
+  questionInput.classList.add('invisible')
+  userInput.classList.remove('invisible')
+  userInput.innerHTML = `${input}`
 }
 
 
