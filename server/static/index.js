@@ -5,3 +5,5 @@ const takeQuestionHandler = () => {
   question = questionInput.value.replace(/[.,\/#!$%\^&\*;:{}=\-_`~()]/g, "").trim()
   questionInput.style.display.toggle('none')
 }
+
+submitQuestion.addEventListener('click', takeQuestionHandler)
