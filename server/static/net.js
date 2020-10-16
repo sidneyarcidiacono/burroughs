@@ -83,6 +83,7 @@ const trainingData = []
 const config = {
   hiddenLayers: [40, 30, 20], // array of ints for the sizes of the hidden layers in the network
   outputSize: 5,
+
 };
 
 async function getTrainingData () {
