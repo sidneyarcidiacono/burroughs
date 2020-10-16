@@ -12,6 +12,12 @@ def home():
     return render_template("index.html")
 
 
+@main.route("/kerasgenerator")
+def kerasgenerator():
+    """Function to generate text based on keras model."""
+    pass
+
+
 @main.route("/about")
 def about():
     """Render about.html."""
