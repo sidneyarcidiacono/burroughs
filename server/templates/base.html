@@ -17,6 +17,10 @@
 <body>
   <header>
     <button id="hamburger-menu"><img src="{{ url_for('static', filename='assets/menu-2.svg') }}" alt="hamburger menu"></button>
+    <nav class="invisible" id="side-nav">
+      <a href="{{ url_for('main.about') }}">About the Generator</a>
+      <a href="{{ url_for('main.home') }}">Home</a>
+    </nav>
   </header>
   {% block content %}{% endblock %}
 </body>
