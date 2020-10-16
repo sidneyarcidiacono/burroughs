@@ -4,6 +4,21 @@
   font-family: sans-serif;
 }
 
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+header {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  justify-content: space-around;
+  margin-left: auto;
+}
+
 h1 {
   font-size: 42px;
 }
@@ -23,13 +38,20 @@ div {
   height: 50px;
 }
 
-input[type="text"]:focus {
-  box-shadow: 0 0 0 3px black;
+button {
+  drop-shadow: none;
+  border: none;
+  background-color: #723A3A;
+  color: #F2F2F2;
 }
 
-input [type=submit]:focus {
-  shadow: 2px;
-  color: black;
+button:hover {
+  background-color: #F2F2F2;
+  color: #723A3A;
+}
+
+input[type="text"]:focus {
+  box-shadow: 0 0 0 3px black;
 }
 
 .invisible {
@@ -44,3 +66,14 @@ input [type=submit]:focus {
   padding: 25px;
   font-family: Georgia;
 }
+
+#hamburger-menu {
+  background-color: inherit;
+}
+
+/* TODO: Set up hover effects for ham. menu  */
+
+/* #hamburger-menu:hover {
+  color: black;
+  background-color: inherit;
+} */
