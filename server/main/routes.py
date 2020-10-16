@@ -12,6 +12,12 @@ def home():
     return render_template("index.html")
 
 
+@main.route("/about")
+def about():
+    """Render about.html."""
+    return render_template("about.html")
+
+
 @main.route("/gettrainingdata")
 def show_training_data():
     """Return all training data as json to client."""

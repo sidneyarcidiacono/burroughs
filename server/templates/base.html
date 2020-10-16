@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <!-- to fix favicon.ico 404 error in localenv -->
+  <link rel="shortcut icon" href="">
+  <!-- scripts & stylesheets -->
+  <script src="//unpkg.com/brain.js"></script>
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <script type="text/javascript" src="{{ url_for('static', filename='index.js') }}" defer></script>
+  <script type="text/javascript" src="{{ url_for('static', filename='net.js') }}" defer></script>
+  <link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  </link>
+  {% block head %}{% endblock %}
+</head>
+
+<body>
+  <header>
+    <button id="hamburger-menu"><img src="{{ url_for('static', filename='assets/menu-2.svg') }}" alt="hamburger menu"></button>
+  </header>
+  {% block content %}{% endblock %}
+</body>
+
+</html>

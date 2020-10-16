@@ -81,7 +81,8 @@ const trainingData = []
 
 
 const config = {
-  hiddenLayers: [16, 14, 12, 10], // array of ints for the sizes of the hidden layers in the network
+  hiddenLayers: [40, 30, 20], // array of ints for the sizes of the hidden layers in the network
+  outputSize: 5,
 };
 
 async function getTrainingData () {
@@ -111,15 +112,15 @@ async function trainNet () {
   await getTrainingData()
   console.log(trainingData)
   net.train(trainingData, {
-    iterations: 1500,
-    errorThresh: 0.0091,
+    iterations: 2000,
+    errorThresh: 0.009,
     log: (stats) => console.log(stats)
   })
 }
 
 async function runNet(input) {
   await trainNet()
-  response = net.run(input, true, 1.5)
+  response = net.run(input, false, 3)
   showResponse.classList.remove('invisible')
   showResponse.innerHTML = `${response}`
 }

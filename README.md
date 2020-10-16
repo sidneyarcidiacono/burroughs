@@ -1,5 +1,6 @@
 # burroughs
 ### A text-generating neural network that simulates question and response with William Burroughs
+#### Powered by Brain.js
 
 #### To Run:
 

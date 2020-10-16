@@ -1,14 +1,6 @@
-<html>
+{% extends "base.html" %}
 
-  <head>
-    <link rel="shortcut icon" href="">
-    <script src="//unpkg.com/brain.js"></script>
-    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-    <script type="text/javascript" src="{{ url_for('static', filename='index.js') }}" defer></script>
-    <script type="text/javascript" src="{{ url_for('static', filename='net.js') }}" defer></script>
-    <link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='style.css') }}"></link>
-  </head>
-
+{% block content %}
   <body>
     <h4>
       “The study of thinking machines teaches us more about the brain than we can learn by introspective methods.
@@ -34,5 +26,4 @@
    </section>
 
   </body>
-
-</html>
+{% endblock %}
