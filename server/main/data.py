@@ -116,18 +116,25 @@ reduce_lr = ReduceLROnPlateau(
 callbacks = [print_callback, checkpoint, reduce_lr]
 
 
-model.fit(x, y, batch_size=128, epochs=10, callbacks=callbacks)
+# model.fit(x, y, batch_size=128, epochs=10, callbacks=callbacks)
 
 
-def generate_text(user_input, diversity):
+def generate_text(user_input):
     """Get random starting text"""
-    start_index = 0
-    generated = ''
-    sentence = text[start_index: start_index + len(user_input)]
-    generated += sentence
-    for i in range(len(user_input)):
-        x_pred = np.zeros((1, len(user_input), len(chars)))
-        for t, char in enumerate(sentence):
-            x_pred[0, t, char_indices[char]] = 1
+    start_index = random.randint(0, len(text) - maxlength - 1)
+    for diversity in [0.2, 0.5, 1.0, 1.2]:
 
+        generated = ""
+        sentence = text[start_index: start_index + maxlength]
+        print('...Generating with seed: "' + sentence + '"')
+
+        for i in range(200):
+            x_pred = np.zeros((1, maxlength, len(chars)))
+            for t, char in enumerate(sentence):
+                x_pred[0, t, char_indices[char]] = 1.0
+            preds = model.predict(x_pred, verbose=0)[0]
+            next_index = sample(preds, diversity)
+            next_char = indices_char[next_index]
+            sentence = sentence[1:] + next_char
+            generated += next_char
     return generated

@@ -60,6 +60,15 @@ h5 {
   padding: 0;
 }
 
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: overline;
+  opacity: 0.5;
+}
+
 section {
   padding-top: 40px;
   padding-bottom: 45px;

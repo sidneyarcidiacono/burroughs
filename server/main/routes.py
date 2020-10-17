@@ -18,7 +18,7 @@ def kerasgenerator():
     """Generate text based on keras model and user input."""
     if request.method == "POST":
         user_input = request.form.get('user-input')
-        response = generate_text(user_input, 2.0)
+        response = generate_text(user_input)
         context = {
             "response": response,
             "user_input": user_input
