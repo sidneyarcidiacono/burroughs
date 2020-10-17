@@ -12,6 +12,7 @@ import sys
 """
 Using this Medium article:
 https://towardsdatascience.com/generating-text-using-a-recurrent-neural-network-1c3bfee27a5e
+and the Keras character-by-character text-generator tutorials & documentation
 as a guide, to learn how to apply what I've learned about LSTM
 neural networks to a real generative network.
 """
@@ -22,10 +23,9 @@ with open("server/main/data.txt") as file:
 print(f"Text length: {len(text)}")
 
 chars = sorted(list(set(text)))  # getting all unique characters
-print(f"total chars: {len(chars)}")
 
 char_indices = dict((c, i) for i, c in enumerate(chars))
-indices_char = dict((i, c) for c, i in enumerate(chars))
+indices_char = dict((c, i) for c, i in enumerate(chars))
 
 # Split data up for use by model, define parameters
 
@@ -48,6 +48,7 @@ for i, sentence in enumerate(sentences):
 model = Sequential()
 model.add(LSTM(128, input_shape=(maxlength, len(chars))))
 model.add(Dense(len(chars)))
+model.add(Dense(len(chars)))
 model.add(Activation("softmax"))
 
 optimizer = RMSprop(lr=0.01)
@@ -68,7 +69,7 @@ def sample(preds, temperature=1.0):
 
 
 def on_epoch_end(epoch, _):
-
+    """Print generated text and status while training."""
     epochs = 10
     batch_size = 128
 
@@ -91,6 +92,9 @@ def on_epoch_end(epoch, _):
                     x_pred[0, t, char_indices[char]] = 1.0
                 preds = model.predict(x_pred, verbose=0)[0]
                 next_index = sample(preds, diversity)
+                next_char = indices_char[next_index]
+                sentence = sentence[1:] + next_char
+                generated += next_char
 
             print("...Generated: ", generated)
             print()
@@ -112,18 +116,18 @@ reduce_lr = ReduceLROnPlateau(
 callbacks = [print_callback, checkpoint, reduce_lr]
 
 
-# model.fit(x, y, batch_size=128, epochs=5, callbacks=callbacks)
+model.fit(x, y, batch_size=128, epochs=10, callbacks=callbacks)
 
 
 def generate_text(user_input, diversity):
     """Get random starting text"""
-    start_index = random.randint(0, len(text) - len(user_input) - 1)
+    start_index = 0
     generated = ''
     sentence = text[start_index: start_index + len(user_input)]
     generated += sentence
     for i in range(len(user_input)):
         x_pred = np.zeros((1, len(user_input), len(chars)))
         for t, char in enumerate(sentence):
-            x_pred[0, t, char_indices[char]] = 1.
+            x_pred[0, t, char_indices[char]] = 1
 
     return generated
