@@ -16,8 +16,12 @@
 
 <body>
   <header>
-    <button id="hamburger-menu"><img src="{{ url_for('static', filename='assets/menu-2.svg') }}" alt="hamburger menu"></button>
-    <nav class="invisible" id="side-nav">
+    <h5>
+      “The study of thinking machines teaches us more about the brain than we can learn by introspective methods.
+      Western man is externalizing himself in the form of gadgets.”
+    </h5>
+    <button class="nav" id="hamburger-menu"><img src="{{ url_for('static', filename='assets/menu-2.svg') }}" alt="hamburger menu"></button>
+    <nav class="invisible nav" id="side-nav">
       <a href="{{ url_for('main.about') }}">About the Generator</a>
       <a href="{{ url_for('main.home') }}">v 1.0</a>
       <a href="{{ url_for('main.kerasgenerator') }}">v 2.0</a>

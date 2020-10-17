@@ -3,31 +3,34 @@
 {% block content %}
 
 <body>
+  <div class="main-content">
 
-  <section>
-    <h2>About the Burroughs-Generator</h2>
-    <p>
-      The Burroughs-Generator is powered by Brain.js: a pre-written and simple neural net
-      developed for Javascript and Node JS. In human terms, a neural net (more technically, an Artificial Neural Net),
-      is a type of machine learning computer system inspired by the structure and function of the brains of humans.
-      In the simplest form, a neural net has a "neuron" that takes input (a real number), "hidden layers" of neurons
-      that (to oversimplifiy) perform calculations, and an output "neuron" that provides the result.
+    <div class="main-content-inner">
 
-      Neural nets learn in similar processes to us: they generate responses and results that are wrong, perform some
-      calculation to figure out how wrong, and adjust so that next time they're closer to being correct or achieving
-      their goal.
+      <h2>About the Burroughs-Generator</h2>
+      <p>
+        The Burroughs-Generator is powered by Brain.js: a pre-written and simple neural net
+        developed for Javascript and Node JS. In human terms, a neural net (more technically, an Artificial Neural Net),
+        is a type of machine learning computer system inspired by the structure and function of the brains of humans.
+        In the simplest form, a neural net has a "neuron" that takes input (a real number), "hidden layers" of neurons
+        that (to oversimplifiy) perform calculations, and an output "neuron" that provides the result.
 
-      It is important to mention that Brain.js is not meant to be a generative neural network. This is why occaisionally
-      it will simply return long strings of quotes that it has been trained on. It is through experimentation with
-      hidden layers and other parameters that provides the desired generative outcome.
-    </p>
-    <p>
-      For those of you versed in Machine Learning terms, the Burroughs-Generator is based on Brain.js' Long-Short Term Memory
-      recurrent neural network.
-    </p>
-    <a href="https://brain.js.org/#/">You can learn more about Brain.js here</a>
-    <a href="https://en.wikipedia.org/wiki/Artificial_neural_network">Check out this wikipedia article for some more information on neural networks.</a>
-  </section>
+        Neural nets learn in similar processes to us: they generate responses and results that are wrong, perform some
+        calculation to figure out how wrong, and adjust so that next time they're closer to being correct or achieving
+        their goal.
 
+        It is important to mention that Brain.js is not meant to be a generative neural network. This is why occaisionally
+        it will simply return long strings of quotes that it has been trained on. It is through experimentation with
+        hidden layers and other parameters that provides the desired generative outcome.
+      </p>
+      <p>
+        For those of you versed in Machine Learning terms, the Burroughs-Generator is based on Brain.js' Long-Short Term Memory
+        recurrent neural network.
+      </p>
+      <a href="https://brain.js.org/#/">You can learn more about Brain.js here</a>
+      <a href="https://en.wikipedia.org/wiki/Artificial_neural_network">Check out this wikipedia article for some more information on neural networks.</a>
+
+    </div>
+  </div>
 </body>
 {% endblock %}

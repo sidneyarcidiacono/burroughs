@@ -1,10 +1,10 @@
 * {
-  background-color: #F2F2F2;
   color: #723A3A;
   font-family: sans-serif;
 }
 
 body {
+  background-color: #F2F2F2;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -12,6 +12,19 @@ body {
 }
 
 header {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-around;
+  margin: auto;
+}
+
+form {
+  display: flex;
+}
+
+.nav {
   display: flex;
   flex-direction: row;
   align-items: flex-end;
@@ -40,9 +53,17 @@ h4 {
   margin: 10px;
 }
 
+h5 {
+  margin-top: 5px;
+  margin-right: 25px;
+  margin-left: 5px;
+  padding: 0;
+}
+
 section {
   padding-top: 40px;
   padding-bottom: 45px;
+  background-color: none;
 }
 
 /* div containing input field */
@@ -51,46 +72,77 @@ div {
   height: 50px;
 }
 
+input {
+  margin: 10px;
+  width: 150px;
+  height: 20px;
+  background-color: #F2F2F2;
+}
+
+input:focus {
+  opacity: 0.75;
+}
+
 button, input[type=submit]{
   drop-shadow: none;
   border: none;
-  background-color: #723A3A;
-  color: #F2F2F2;
+  color: #723A3A;
+  background-color: #F2F2F2;
+  width: 75px;
+  height: 26px;
 }
 
 button:hover, input[type=submit]:hover {
-  background-color: #F2F2F2;
-  color: #723A3A;
-}
-
-input[type="text"]:focus {
-  box-shadow: 0 0 0 3px black;
+  opacity: 0.25;
 }
 
 footer {
   margin-top: auto;
+  padding: 200px;
 }
 
 .invisible {
   display: none;
 }
 
-.content {
-  max-width: 500px;
+.main-content {
+  width: 90vw;
+  height: 90vh;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: column;
+  background-color: #723A3A;
+}
+
+.main-content-inner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
   margin: auto;
-  color: #401b1a;
-  text-align: center;
-  padding: 25px;
-  font-family: Georgia;
+  height: 60%;
+  width: 80%
+}
+
+.main-content-inner h4,
+.main-content-inner h5,
+.main-content-inner h2,
+.main-content-inner p {
+  margin-top: 25px;
+  margin-bottom: 25px;
+  color: #F2F2F2;
 }
 
 #hamburger-menu {
+  width: 60px;
+  height: auto;
   background-color: inherit;
 }
 
 /* TODO: Set up hover effects for ham. menu  */
 
-/* #hamburger-menu:hover {
-  color: black;
-  background-color: inherit;
-} */
+#hamburger-menu:hover {
+  opacity: 0.25;
+  drop-shadow: 2px #fff;
+}

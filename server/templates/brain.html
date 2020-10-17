@@ -5,35 +5,32 @@
 {% endblock %}
 
 {% block content %}
-  <body>
-    <h4>
-      “The study of thinking machines teaches us more about the brain than we can learn by introspective methods.
-      Western man is externalizing himself in the form of gadgets.”
-    </h4>
-    <h1>Talk to William Burroughs</h1>
-    <h4>Version 1.0 powered by Brain.js</h4>
-    <h5>
-      Brain.js is an accelerated neural net built for JavaScript and Node.js.
-      This means this one is running in the browser itself. Go to "Develop" and "Open JavaScript Console".
-      Then, input some text and watch it train!
-    </h5>
-    <p>Go to the menu in the upper right to check out Version 2.0, and see the difference.</p>
 
-  <section>
-    <div>
-          <h2>Ask a Question, or Make a Comment:</h2>
+<body>
+  <h1>Talk to William Burroughs</h1>
+
+
+  <div class="main-content">
+    <div class="main-content-inner">
+      <h4>Version 1.0 powered by Brain.js</h4>
+      <h5>
+        Brain.js is an accelerated neural net built for JavaScript and Node.js.
+        This means this one is running in the browser itself. Go to "Develop" and "Open JavaScript Console".
+        Then, input some text and watch it train!
+      </h5>
+      <p>Go to the menu in the upper right to check out Version 2.0, and see the difference.</p>
+      <h2>Say Something:</h2>
     </div>
-  </section>
 
-  <section>
-    <div>
+    <section>
+
       <p class="invisible" id="user-input">User Input</p>
       <h4 class="invisible" id="response">Response</h4>
-        <input type="text" name="question" id="question">
-        <button id="submit-question">Send</button>
-        <button class="invisible" id="say-more">Say More</button>
-    </div>
-   </section>
+      <input type="text" name="question" id="question">
+      <button id="submit-question">Send</button>
+      <button class="invisible" id="say-more">Say More</button>
 
-  </body>
+    </section>
+  </div>
+</body>
 {% endblock %}

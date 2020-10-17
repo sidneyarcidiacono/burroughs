@@ -3,38 +3,36 @@
 {% block content %}
 
 <body>
-  <h5>
-    “The study of thinking machines teaches us more about the brain than we can learn by introspective methods.
-    Western man is externalizing himself in the form of gadgets.”
-  </h5>
+
   <h1>Talk to William Burroughs</h1>
-  <h4>Version 2.0 powered by Tensorflow & Keras</h4>
-  <h5>
-    Keras is a deep learning library built on Tensorflow, and this model was built
-    specifically to generate text character by character.
-  </h5>
-  <p>Can you tell the difference?</p>
+  <div class="main-content">
+    <div class="main-content-inner">
+      <h4>Version 2.0 powered by Tensorflow & Keras</h4>
+      <h5>
+        Keras is a deep learning library built on Tensorflow, and this model was built
+        specifically to generate text character by character.
+      </h5>
+      <p>Can you tell the difference?</p>
 
-<section>
-  <div>
-        <h2>Ask a Question, or Make a Comment:</h2>
-  </div>
-</section>
+      <h2>Say Something:</h2>
 
-<section>
-  <div>
-    {% if response %}
-      <p>{{ user_input }}</p>
-      <h4>{{ response }}</h4>
-      <button id="say-more">Say More</button>
-    {% else %}
-      <form class="user-comment" action="{{ url_for('main.kerasgenerator') }}" method="POST">
-        <input type="text" name="user-input" id="user-input">
-        <input type="submit" value="Send">
-      </form>
-    {% endif %}
+      <section>
+
+        {% if response %}
+        <p>{{ user_input }}</p>
+        <h4>{{ response }}</h4>
+        <form class="" action="{{ url_for('main.kerasgenerator')}}" method="GET">
+          <input type="submit" name="say-more" value="Say More">
+        </form>
+        {% else %}
+        <form class="user-comment" action="{{ url_for('main.kerasgenerator') }}" method="POST">
+          <input type="text" name="user-input">
+          <input type="submit" value="Send">
+        </form>
+        {% endif %}
+      </section>
+    </div>
   </div>
- </section>
 
 </body>
 
