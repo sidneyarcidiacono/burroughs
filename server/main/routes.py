@@ -2,6 +2,7 @@
 from flask import Blueprint, request, jsonify, render_template
 from server import db
 from bson.json_util import dumps
+from server.main.data import generate_text
 
 main = Blueprint("main", __name__)
 
@@ -12,10 +13,18 @@ def home():
     return render_template("index.html")
 
 
-@main.route("/kerasgenerator")
+@main.route("/kerasgenerator", methods=['GET', 'POST'])
 def kerasgenerator():
-    """Function to generate text based on keras model."""
-    pass
+    """Generate text based on keras model and user input."""
+    if request.method == "POST":
+        user_input = request.form.get('user-input')
+        response = generate_text(user_input, 2.0)
+        context = {
+            "response": response,
+            "user_input": user_input
+        }
+        return render_template('generator.html', **context)
+    return render_template('generator.html')
 
 
 @main.route("/about")
@@ -29,11 +38,6 @@ def show_training_data():
     """Return all training data as json to client."""
     training_data = db.trainingdata.find({})
     return dumps(training_data)
-
-
-@main.route("/getuserinput", methods=["POST"])
-def get_user_input():
-    pass
 
 
 @main.route("/trainingdata", methods=["POST"])

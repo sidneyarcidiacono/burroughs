@@ -1,12 +1,16 @@
 {% extends "base.html" %}
 
+{% block head %}
+<script type="text/javascript" src="{{ url_for('static', filename='index.js') }}" defer></script>
+<script type="text/javascript" src="{{ url_for('static', filename='net.js') }}" defer></script>
+{% endblock %}
+
 {% block content %}
   <body>
     <h4>
       “The study of thinking machines teaches us more about the brain than we can learn by introspective methods.
       Western man is externalizing himself in the form of gadgets.”
     </h4>
-    <title>Talk to William Burroughs</title>
     <h1>Talk to William Burroughs</h1>
 
   <section>

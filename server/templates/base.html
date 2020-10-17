@@ -7,9 +7,8 @@
   <!-- scripts & stylesheets -->
   <script src="//unpkg.com/brain.js"></script>
   <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-  <script type="text/javascript" src="{{ url_for('static', filename='index.js') }}" defer></script>
-  <script type="text/javascript" src="{{ url_for('static', filename='net.js') }}" defer></script>
   <link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <title>Burroughs-Generator</title>
   </link>
   {% block head %}{% endblock %}
 </head>
@@ -19,7 +18,8 @@
     <button id="hamburger-menu"><img src="{{ url_for('static', filename='assets/menu-2.svg') }}" alt="hamburger menu"></button>
     <nav class="invisible" id="side-nav">
       <a href="{{ url_for('main.about') }}">About the Generator</a>
-      <a href="{{ url_for('main.home') }}">Home</a>
+      <a href="{{ url_for('main.home') }}">v 1.0</a>
+      <a href="{{ url_for('main.kerasgenerator') }}">v 2.0</a>
     </nav>
   </header>
   {% block content %}{% endblock %}

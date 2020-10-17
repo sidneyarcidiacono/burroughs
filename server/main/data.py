@@ -17,7 +17,7 @@ neural networks to a real generative network.
 """
 
 
-with open("data.txt") as file:
+with open("server/main/data.txt") as file:
     text = file.read().lower()
 print(f"Text length: {len(text)}")
 
@@ -37,8 +37,6 @@ next_chars = []
 for i in range(0, len(text) - maxlength, step):
     sentences.append(text[i: i + maxlength])
     next_chars.append(text[i + maxlength])
-
-print(f"next chars l 41 {next_chars}")
 
 x = np.zeros((len(sentences), maxlength, len(chars)), dtype=np.bool)
 y = np.zeros((len(sentences), len(chars)), dtype=np.bool)
@@ -117,24 +115,15 @@ callbacks = [print_callback, checkpoint, reduce_lr]
 # model.fit(x, y, batch_size=128, epochs=5, callbacks=callbacks)
 
 
-def generate_text(length, diversity):
+def generate_text(user_input, diversity):
     """Get random starting text"""
-    start_index = random.randint(0, len(text) - maxlength - 1)
+    start_index = random.randint(0, len(text) - len(user_input) - 1)
     generated = ''
-    sentence = text[start_index: start_index + maxlength]
+    sentence = text[start_index: start_index + len(user_input)]
     generated += sentence
-    for i in range(length):
-        x_pred = np.zeros((1, maxlength, len(chars)))
+    for i in range(len(user_input)):
+        x_pred = np.zeros((1, len(user_input), len(chars)))
         for t, char in enumerate(sentence):
             x_pred[0, t, char_indices[char]] = 1.
 
-        # preds = model.predict(x_pred, verbose=0)[0]
-        # next_index = sample(preds, diversity)
-        # next_char = indices_char[next_index]
-
-        # generated += next_char
-        # sentence = sentence[1:] + next_char
     return generated
-
-
-print(generate_text(10, 1.0))
