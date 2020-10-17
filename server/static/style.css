@@ -1,5 +1,5 @@
 * {
-  color: #723A3A;
+  color: #76002C;
   font-family: sans-serif;
 }
 
@@ -95,7 +95,7 @@ input:focus {
 button, input[type=submit]{
   drop-shadow: none;
   border: none;
-  color: #723A3A;
+  color: #76002C;
   background-color: #F2F2F2;
   width: 75px;
   height: 26px;
@@ -121,7 +121,7 @@ footer {
   align-items: center;
   justify-content: flex-start;
   flex-direction: column;
-  background-color: #723A3A;
+  background-color: #8C3B4B;
 }
 
 .main-content-inner {
