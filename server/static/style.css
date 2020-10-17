@@ -19,12 +19,25 @@ header {
   margin-left: auto;
 }
 
+nav a {
+  text-decoration: none;
+  padding: 10px;
+}
+
+nav a:hover {
+  text-decoration: overline;
+}
+
 h1 {
   font-size: 42px;
 }
 
 h2 {
-  margin: 55px;
+  margin: 30px;
+}
+
+h4 {
+  margin: 10px;
 }
 
 section {
@@ -38,20 +51,24 @@ div {
   height: 50px;
 }
 
-button {
+button, input[type=submit]{
   drop-shadow: none;
   border: none;
   background-color: #723A3A;
   color: #F2F2F2;
 }
 
-button:hover {
+button:hover, input[type=submit]:hover {
   background-color: #F2F2F2;
   color: #723A3A;
 }
 
 input[type="text"]:focus {
   box-shadow: 0 0 0 3px black;
+}
+
+footer {
+  margin-top: auto;
 }
 
 .invisible {

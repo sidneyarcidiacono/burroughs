@@ -10,7 +10,7 @@ main = Blueprint("main", __name__)
 @main.route("/", methods=["GET", "POST"])
 def home():
     """Show the user the homepage."""
-    return render_template("index.html")
+    return render_template("brain.html")
 
 
 @main.route("/kerasgenerator", methods=['GET', 'POST'])
