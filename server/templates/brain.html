@@ -2,6 +2,8 @@
 
 {% block head %}
 <script type="text/javascript" src="{{ url_for('static', filename='net.js') }}" defer></script>
+<script src="./node_modules/brain.js/src/utilities/svg.js"></script>
+
 {% endblock %}
 
 {% block content %}
@@ -30,6 +32,8 @@
         <button class="invisible" id="say-more">Say More</button>
 
       </section>
+    </div>
+    <div class="result">
     </div>
   </div>
 </body>

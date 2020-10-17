@@ -3,6 +3,7 @@ const submitQuestion = document.getElementById('submit-question')
 const sayMore = document.getElementById('say-more')
 const userInput = document.getElementById('user-input')
 let showResponse = document.getElementById('response')
+const diagramResult = document.getElementById('result')
 const trainingData = []
 
 const config = {
@@ -59,6 +60,7 @@ const takeQuestionHandler = () => {
   userInput.innerHTML = `${input}`
   submitQuestion.classList.add('invisible')
   sayMore.classList.remove('invisible')
+  diagramResult.innerHTML = brain.utilities.toSVG(net)
 }
 
 const sayMoreHandler = () => {
