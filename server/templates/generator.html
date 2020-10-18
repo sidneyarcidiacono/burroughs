@@ -22,6 +22,11 @@
         {% if response %}
         <p>{{ user_input }}</p>
         <h4>{{ response }}</h4>
+        <p>
+          Burroughs-Generator's English skills could still use some work, but we're getting there!
+          With more computational power and data, there's the potential for
+          much more coherent and adept responses, like your phone's voice assistant.
+        </p>
         <form class="" action="{{ url_for('main.kerasgenerator')}}" method="GET">
           <input type="submit" name="say-more" value="Say More">
         </form>

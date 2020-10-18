@@ -48,7 +48,6 @@ for i, sentence in enumerate(sentences):
 model = Sequential()
 model.add(LSTM(128, input_shape=(maxlength, len(chars))))
 model.add(Dense(len(chars)))
-model.add(Dense(len(chars)))
 model.add(Activation("softmax"))
 
 optimizer = RMSprop(lr=0.01)
@@ -116,7 +115,7 @@ reduce_lr = ReduceLROnPlateau(
 callbacks = [print_callback, checkpoint, reduce_lr]
 
 
-# model.fit(x, y, batch_size=128, epochs=10, callbacks=callbacks)
+model.fit(x, y, batch_size=128, epochs=20, callbacks=callbacks)
 
 
 def generate_text(user_input):
@@ -125,7 +124,7 @@ def generate_text(user_input):
     for diversity in [0.2, 0.5, 1.0, 1.2]:
 
         generated = ""
-        sentence = text[start_index: start_index + maxlength]
+        sentence = user_input
         print('...Generating with seed: "' + sentence + '"')
 
         for i in range(200):
@@ -135,6 +134,5 @@ def generate_text(user_input):
             preds = model.predict(x_pred, verbose=0)[0]
             next_index = sample(preds, diversity)
             next_char = indices_char[next_index]
-            sentence = sentence[1:] + next_char
             generated += next_char
     return generated
