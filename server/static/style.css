@@ -20,6 +20,11 @@ header {
   margin: auto;
 }
 
+img {
+  width: 55vw;
+  height: auto;
+}
+
 form {
   display: flex;
 }

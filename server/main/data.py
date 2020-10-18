@@ -101,7 +101,7 @@ def on_epoch_end(epoch, _):
 
 print_callback = LambdaCallback(on_epoch_end=on_epoch_end)
 
-# Function to save model each time the loss function decreases
+# Save weights each time the loss function decreases
 
 filepath = "weights.hdf5"
 checkpoint = ModelCheckpoint(
@@ -115,7 +115,7 @@ reduce_lr = ReduceLROnPlateau(
 callbacks = [print_callback, checkpoint, reduce_lr]
 
 
-model.fit(x, y, batch_size=128, epochs=20, callbacks=callbacks)
+model.fit(x, y, batch_size=128, epochs=10, callbacks=callbacks)
 
 
 def generate_text(user_input):
