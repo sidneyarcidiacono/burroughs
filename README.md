@@ -40,7 +40,7 @@ As well as this article: https://towardsdatascience.com/generating-text-using-a-
 Machine learning has exploded in the last decade due to advances in the field and more and more industries
 clamoring to adapt this new technology with so much potential. While Machine Learning is going to be the future of
 many industries, and has the potential to solve problems that people and societies face, it is intimidating and inaccessible to many. Find any article on neural networks and machine learning and you are faced with technical terms from
-computer science and mathematics. This can make this technology feel scary and malevolent to the average person. As viral videos on YouTube encourage this fear response for clicks, and documentaries appear about the negative effects of the algorithms at work behind the scenes of our social media accounts, it is important to provide understanding, so that individuals can genuinely understand the pros and cons of such technology.
+computer science and mathematics. This can make this technology feel scary and malevolent to the average person. As viral videos on YouTube encourage this fear response for clicks, and documentaries appear about the negative effects of the algorithms at work behind the scenes of our social media accounts, it is important to provide understanding, so that individuals can genuinely weigh the pros and cons of such technology.
 
 The Burroughs-Generator aims to give the average person a chance to interact with this technology in a way that feels
 approachable and playful. Additionally, an About page is presented with further information and resources to understand
