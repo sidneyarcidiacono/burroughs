@@ -1,6 +1,6 @@
 # Burroughs-Generator
 
-### A text-generating neural network that simulates question and response with William Burroughs
+### A text-generating neural network that simulates statement & response with author William Burroughs
 
 #### Featuring Two LSTM Recurrent Neural Network Models:
 
