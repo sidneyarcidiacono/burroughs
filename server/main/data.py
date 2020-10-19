@@ -1,5 +1,5 @@
 """Dependency and package imports"""
-from keras.models import Sequential
+from keras.models import Sequential, load_model
 from keras.layers import Dense, Activation
 from keras.layers import LSTM
 from keras.optimizers import RMSprop
@@ -115,6 +115,9 @@ reduce_lr = ReduceLROnPlateau(
 
 callbacks = [print_callback, checkpoint, reduce_lr]
 
+loaded_model = load_model(filepath)
+loaded_model.summary()
+
 
 # model.fit(x, y, batch_size=128, epochs=10, callbacks=callbacks)
 
@@ -124,17 +127,17 @@ def generate_text(user_input):
     start_index = 0
     generated = ''
     diversity = 0.2
-    sentence = user_input.lower()
+    sentence = text[start_index: start_index + maxlength]
     print('...Generating with seed: "' + sentence + '"')
 
     for i in range(400):
         x_pred = np.zeros((1, maxlength, len(chars)))
         for t, char in enumerate(sentence):
             x_pred[0, t, char_indices[char]] = 1.0
-        preds = model.predict(x_pred, verbose=0)[0]
+        preds = loaded_model.predict(x_pred, verbose=0)[0]
         next_index = sample(preds, diversity)
         next_char = indices_char[next_index]
         sentence = sentence[1:] + next_char
         generated += next_char
-        
+
     return generated
