@@ -1,5 +1,5 @@
 """Dependency and package imports"""
-from keras.models import Sequential, load_model
+from keras.models import Sequential
 from keras.layers import Dense, Activation
 from keras.layers import LSTM
 from keras.optimizers import RMSprop
@@ -10,7 +10,7 @@ import sys
 
 """Convert our data to something the model can understand."""
 """
-Using this article:
+Using this Medium article:
 https://towardsdatascience.com/generating-text-using-a-recurrent-neural-network-1c3bfee27a5e
 and the Keras character-by-character text-generator tutorials & documentation
 as a guide, to learn how to apply what I've learned about LSTM
@@ -48,9 +48,10 @@ for i, sentence in enumerate(sentences):
 model = Sequential()
 model.add(LSTM(128, input_shape=(maxlength, len(chars))))
 model.add(Dense(len(chars)))
+model.add(Dense(len(chars)))
 model.add(Activation("softmax"))
 
-optimizer = RMSprop(learning_rate=0.01)
+optimizer = RMSprop(lr=0.01)
 model.compile(loss="categorical_crossentropy", optimizer=optimizer)
 
 
@@ -101,7 +102,7 @@ def on_epoch_end(epoch, _):
 
 print_callback = LambdaCallback(on_epoch_end=on_epoch_end)
 
-# Save weights each time the loss function decreases
+# Function to save model each time the loss function decreases
 
 filepath = "weights.hdf5"
 checkpoint = ModelCheckpoint(
@@ -114,26 +115,26 @@ reduce_lr = ReduceLROnPlateau(
 
 callbacks = [print_callback, checkpoint, reduce_lr]
 
-# loaded_model = load_model(filepath)
-# model.summary()
+
 # model.fit(x, y, batch_size=128, epochs=10, callbacks=callbacks)
 
 
 def generate_text(user_input):
     """Get random starting text"""
-    start_index = random.randint(0, len(text) - maxlength - 1)
+    start_index = 0
+    generated = ''
     diversity = 0.2
-
-    generated = ""
-    sentence = user_input
+    sentence = user_input.lower()
     print('...Generating with seed: "' + sentence + '"')
 
-    for i in range(200):
+    for i in range(400):
         x_pred = np.zeros((1, maxlength, len(chars)))
         for t, char in enumerate(sentence):
             x_pred[0, t, char_indices[char]] = 1.0
         preds = model.predict(x_pred, verbose=0)[0]
         next_index = sample(preds, diversity)
         next_char = indices_char[next_index]
+        sentence = sentence[1:] + next_char
         generated += next_char
+        
     return generated

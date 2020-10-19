@@ -9,14 +9,10 @@ const hamMenuHandler = () => {
   sideNav.classList.remove('invisible')
 }
 
-// const isLoading = () => {
-//   loadIcon.classList.remove('invisible')
-// }
-//
-// const stopLoading = () => {
-//   loadIcon.classList.add('invisible')
-// }
+const isLoading = () => {
+  loadIcon.classList.remove('invisible')
+  loadIcon.classList.add('rotate')
+}
 
 hamMenu.addEventListener('click', hamMenuHandler)
-// submit.addEventListener('click', isLoading)
-// response.addEventListener('onload', stopLoading)
+submit.addEventListener('click', isLoading)

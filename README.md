@@ -1,4 +1,5 @@
-# burroughs
+# Burroughs-Generator
+
 ### A text-generating neural network that simulates question and response with William Burroughs
 
 #### Featuring Two LSTM Recurrent Neural Network Models:
@@ -19,9 +20,15 @@ Head to the menu in the top right to access Version 2.0. There is some basic inf
 
 ![Image of Version 2.0 page of Burroughs-Generator](server/static/assets/v2.0page.png)
 
-Add input, and receive your response:
+Add input, and receive your response!
 
-![Image of Version 2.0 page with returned response](server/static/assets/v2.0pagewithresponse.png)
+The Burroughs-Generator Version 2.0 is still facing fine-tuning of parameters, and its performance is limited by the amount of data available to train it on as well as the amount of time it takes to train with such massive amounts of data (hours to days).
+This aspect of the Burroughs-Generator will continue to be improved, and soon the hope is to have a fully-functioning Generator
+that provides sensical feedback based on user input!
+
+Currently, the training sequence is going well, and the net is learning:
+
+![Image of training sequence in terminal](server/static/assets/training.png)
 
 Special thanks to the writers at Keras for their resources on character-level text generating with LSTM. This part of the
 project made possible by their documentation here: https://keras.io/examples/generative/lstm_character_level_text_generation/

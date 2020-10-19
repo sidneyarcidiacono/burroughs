@@ -38,11 +38,3 @@ def show_training_data():
     """Return all training data as json to client."""
     training_data = db.trainingdata.find({})
     return dumps(training_data)
-
-
-@main.route("/trainingdata", methods=["POST"])
-def add_training_data():
-    """Simple interface to add training data to database from client."""
-    training_data = request.json
-    db.trainingdata.insert(training_data)
-    return dumps(training_data)

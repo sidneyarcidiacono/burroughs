@@ -3,12 +3,12 @@ const submitQuestion = document.getElementById('submit-question')
 const sayMore = document.getElementById('say-more')
 const userInput = document.getElementById('user-input')
 const showResponse = document.getElementById('response')
+const loading = document.getElementById('load-cockroach')
 const trainingData = []
 
 const config = {
   hiddenLayers: [40, 30, 20], // array of ints for the sizes of the hidden layers in the network
   outputSize: 5,
-
 };
 
 async function getTrainingData () {
@@ -46,14 +46,18 @@ async function trainNet () {
 
 async function runNet(input) {
   await trainNet()
+  loading.classList.add('invisible')
+  loading.classList.remove('rotate')
   const returnedResponse = net.run(input, false, 3)
   showResponse.classList.remove('invisible')
-  showResponse.innerHTML = `${returnedResponse}`
+  showResponse.innerHTML = `${returnedResponse.substring(0, 45)}`
 }
 
 const takeQuestionHandler = () => {
   let input = questionInput.value
   runNet(input)
+  loading.classList.remove('invisible')
+  loading.classList.add('rotate')
   questionInput.classList.add('invisible')
   userInput.classList.remove('invisible')
   userInput.innerHTML = `${input}`
