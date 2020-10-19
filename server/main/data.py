@@ -48,6 +48,7 @@ for i, sentence in enumerate(sentences):
 model = Sequential()
 model.add(LSTM(128, input_shape=(maxlength, len(chars))))
 model.add(Dense(len(chars)))
+model.add(Dense(len(chars)))
 model.add(Activation("softmax"))
 
 optimizer = RMSprop(lr=0.01)
@@ -78,7 +79,7 @@ def on_epoch_end(epoch, _):
         print("Generating text after epoch: %d" % epoch)
 
         start_index = random.randint(0, len(text) - maxlength - 1)
-        for diversity in [0.2, 0.5, 1.0, 1.2]:
+        for diversity in [0.2, 0.5]:
             print("...Diversity:", diversity)
 
             generated = ""
@@ -121,18 +122,18 @@ model.fit(x, y, batch_size=128, epochs=10, callbacks=callbacks)
 def generate_text(user_input):
     """Get random starting text"""
     start_index = random.randint(0, len(text) - maxlength - 1)
-    for diversity in [0.2, 0.5, 1.0, 1.2]:
+    diversity = 0.2
 
-        generated = ""
-        sentence = user_input
-        print('...Generating with seed: "' + sentence + '"')
+    generated = ""
+    sentence = user_input
+    print('...Generating with seed: "' + sentence + '"')
 
-        for i in range(200):
-            x_pred = np.zeros((1, maxlength, len(chars)))
-            for t, char in enumerate(sentence):
-                x_pred[0, t, char_indices[char]] = 1.0
-            preds = model.predict(x_pred, verbose=0)[0]
-            next_index = sample(preds, diversity)
-            next_char = indices_char[next_index]
-            generated += next_char
+    for i in range(200):
+        x_pred = np.zeros((1, maxlength, len(chars)))
+        for t, char in enumerate(sentence):
+            x_pred[0, t, char_indices[char]] = 1.0
+        preds = model.predict(x_pred, verbose=0)[0]
+        next_index = sample(preds, diversity)
+        next_char = indices_char[next_index]
+        generated += next_char
     return generated

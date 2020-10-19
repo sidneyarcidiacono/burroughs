@@ -37,6 +37,7 @@ const net = new brain.recurrent.LSTM(config)
 async function trainNet () {
   await getTrainingData()
   console.log(trainingData)
+  isLoading()
   net.train(trainingData, {
     iterations: 2000,
     errorThresh: 0.009,

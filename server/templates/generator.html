@@ -21,7 +21,7 @@
 
         {% if response %}
         <p>{{ user_input }}</p>
-        <h4>{{ response }}</h4>
+        <h4 id="response">{{ response }}</h4>
         <p>
           Burroughs-Generator's English skills could still use some work, but we're getting there!
           With more computational power and data, there's the potential for
@@ -31,9 +31,10 @@
           <input type="submit" name="say-more" value="Say More">
         </form>
         {% else %}
+        <img src="{{ url_for('static', filename='assets/icons8-cockroach-100.png') }}" alt="Cockroach outline loading icon" class="invisible" id="cockroach">
         <form class="user-comment" action="{{ url_for('main.kerasgenerator') }}" method="POST">
           <input type="text" name="user-input">
-          <input type="submit" value="Send">
+          <input type="submit" value="Send" id="submit-btn">
         </form>
         {% endif %}
       </section>
