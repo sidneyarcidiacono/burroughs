@@ -48,7 +48,6 @@ for i, sentence in enumerate(sentences):
 model = Sequential()
 model.add(LSTM(128, input_shape=(maxlength, len(chars))))
 model.add(Dense(len(chars)))
-model.add(Dense(len(chars)))
 model.add(Activation("softmax"))
 
 optimizer = RMSprop(lr=0.01)
@@ -79,7 +78,7 @@ def on_epoch_end(epoch, _):
         print("Generating text after epoch: %d" % epoch)
 
         start_index = random.randint(0, len(text) - maxlength - 1)
-        for diversity in [0.2, 0.5]:
+        for diversity in [0.2, 0.5, 1.0, 1.2]:
             print("...Diversity:", diversity)
 
             generated = ""
@@ -125,7 +124,7 @@ def generate_text(user_input):
     diversity = 0.2
 
     generated = ""
-    sentence = user_input
+    sentence = text[start_index: start_index + len(user_input)]
     print('...Generating with seed: "' + sentence + '"')
 
     for i in range(200):
