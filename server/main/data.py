@@ -10,7 +10,7 @@ import sys
 
 """Convert our data to something the model can understand."""
 """
-Using this Medium article:
+Using this article:
 https://towardsdatascience.com/generating-text-using-a-recurrent-neural-network-1c3bfee27a5e
 and the Keras character-by-character text-generator tutorials & documentation
 as a guide, to learn how to apply what I've learned about LSTM

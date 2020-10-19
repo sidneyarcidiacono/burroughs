@@ -23,6 +23,7 @@ header {
 img {
   width: 55vw;
   height: auto;
+  margin-bottom: 15px;
 }
 
 form {
