@@ -22,13 +22,9 @@ Head to the menu in the top right to access Version 2.0. There is some basic inf
 
 Add input, and receive your response!
 
-The Burroughs-Generator Version 2.0 is still facing fine-tuning of parameters, and its performance is limited by the amount of data available to train it on as well as the amount of time it takes to train with such massive amounts of data (hours to days).
-This aspect of the Burroughs-Generator will continue to be improved, and soon the hope is to have a fully-functioning Generator
-that provides sensical feedback based on user input!
+![Image of Version 2.0 page with response](server/static/assets/v2.0pagewithresponse.png)
 
-Currently, the training sequence is going well, and the net is learning:
-
-![Image of training sequence in terminal](server/static/assets/training.png)
+The Burroughs-Generator Version 2.0 net is still a little rough! The net was only given one novel (about 278,000 characters) to train on for 10 epochs. This was simply a result of not having much time: each training sequence took between 4-8 hours every time I needed to tweak parameters! As a result, the net unfortunately has not learned or generalized as well as it could have. This project will continue to be updated, and the Keras net will continue to be optimized.
 
 Special thanks to the writers at Keras for their resources on character-level text generating with LSTM. This part of the
 project made possible by their documentation here: https://keras.io/examples/generative/lstm_character_level_text_generation/

@@ -119,11 +119,24 @@ loaded_model = load_model(filepath)
 loaded_model.summary()
 
 
+# This stays commented until it's time to train the model again
+
 # model.fit(x, y, batch_size=128, epochs=10, callbacks=callbacks)
 
 
 def generate_text(user_input):
-    """Get random starting text"""
+    """
+    Get random starting text.
+
+    This takes user input, but it actually uses a sentence from
+    the training data to generate text. This is because in the
+    available timeframe, it would have taken too long to
+    train the model on multiple novels (training on one with 10 epochs
+    takes about 4 hours: training on two novels and 20 epochs
+    took an entire night.)
+    As a result, the model hasn't generalized properly, and
+    will need to be further optimized and fitted in the future.
+    """
     start_index = 0
     generated = ''
     diversity = 0.2
