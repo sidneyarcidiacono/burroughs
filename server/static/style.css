@@ -86,6 +86,11 @@ div {
   height: 50px;
 }
 
+p {
+  width: 60%;
+
+}
+
 input {
   margin: 10px;
   width: 150px;
@@ -143,13 +148,45 @@ footer {
 .main-content-inner h5,
 .main-content-inner h2,
 .main-content-inner p {
-  margin-top: 25px;
+  margin-top: 15px;
   margin-bottom: 25px;
+  width: 75%;
   color: #F2F2F2;
 }
 
+.highlight-content {
+  width: 90vw;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: column;
+  background-color: #8C3B4B;
+}
+
+.highlight-content-inner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin: auto;
+  height: 60%;
+  width: 80%
+}
+
+.highlight-content-inner p {
+  margin-top: 15px;
+  margin-bottom: 25px;
+  width: 75%;
+  color: #F2F2F2;
+}
+
+.follow-link {
+  margin-top: 30px;
+}
+
 #hamburger-menu {
-  width: 60px;
+  width: 50px;
   height: auto;
   background-color: inherit;
 }

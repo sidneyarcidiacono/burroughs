@@ -2,7 +2,7 @@ const questionInput = document.getElementById('question')
 const submitQuestion = document.getElementById('submit-question')
 const sayMore = document.getElementById('say-more')
 const userInput = document.getElementById('user-input')
-let showResponse = document.getElementById('response')
+const showResponse = document.getElementById('response')
 const trainingData = []
 
 const config = {
@@ -37,9 +37,8 @@ const net = new brain.recurrent.LSTM(config)
 async function trainNet () {
   await getTrainingData()
   console.log(trainingData)
-  isLoading()
   net.train(trainingData, {
-    iterations: 2000,
+    iterations: 1500,
     errorThresh: 0.009,
     log: (stats) => console.log(stats)
   })
@@ -47,9 +46,9 @@ async function trainNet () {
 
 async function runNet(input) {
   await trainNet()
-  response = net.run(input, false, 3)
+  const returnedResponse = net.run(input, false, 3)
   showResponse.classList.remove('invisible')
-  showResponse.innerHTML = `${response}`
+  showResponse.innerHTML = `${returnedResponse}`
 }
 
 const takeQuestionHandler = () => {
@@ -64,6 +63,7 @@ const takeQuestionHandler = () => {
 
 const sayMoreHandler = () => {
   questionInput.classList.remove('invisible')
+  questionInput.value = ''
   userInput.classList.add('invisible')
   submitQuestion.classList.remove('invisible')
   sayMore.classList.add('invisible')
