@@ -50,7 +50,7 @@ async function runNet(input) {
   loading.classList.remove('rotate')
   const returnedResponse = net.run(input, false, 3)
   showResponse.classList.remove('invisible')
-  showResponse.innerHTML = `${returnedResponse.substring(0, 45)}`
+  showResponse.innerHTML = `${returnedResponse.substring(0, 65)}`
 }
 
 const takeQuestionHandler = () => {
