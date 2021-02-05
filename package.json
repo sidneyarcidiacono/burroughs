@@ -23,6 +23,7 @@
   "homepage": "https://github.com/sidneyarcidiacono/burroughs#readme",
   "dependencies": {
     "axios": "^0.21.1",
-    "brain.js": "^2.0.0-beta.2"
+    "brain.js": "^2.0.0-beta.2",
+    "ini": "^2.0.0"
   }
 }
