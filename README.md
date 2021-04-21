@@ -29,6 +29,7 @@ The Burroughs-Generator Version 2.0 net is still a little rough! The net was onl
 Special thanks to the following resources, which provided me with invaluable support and starting points:
 
 [Character level text generation with Keras](https://keras.io/examples/generative/lstm_character_level_text_generation/)
+
 [Text generation with a recurrent neural network](https://towardsdatascience.com/generating-text-using-a-recurrent-neural-network-1c3bfee27a5e)
 
 
@@ -36,7 +37,7 @@ Special thanks to the following resources, which provided me with invaluable sup
 
 Deep learning, a subset of machine learning, has exploded in the last decade. The discovery of effective hardware accelerators like GPUs, and the oftentimes fabulous performance of neural networks on unstructured data (like text!) are largely to thank for this explosion. As more and more industries clamor to adapt deep learning, it is still intimidating and inaccessible to many.
 
-Most articles on neural networks and machine learning are chock full of terms from computer science and mathematics completely alien to the average person. This can make this technology feel scary and malevolent to some, and simply unapproachable to others who may want to work on these technologies but aren't aware they can scale this intellectual barrier-to-entry.
+Most articles on neural networks and machine learning are chock full of terms from computer science and mathematics completely alien to the average person. This can make this technology feel scary to some, and unapproachable to others who may want to work with these technologies, but who aren't aware they can scale this intellectual barrier-to-entry.
 
 Viral videos online encourage fear responses from lay-persons, throwing around "AI" and "Generalized AI" often as though they're one in the same. In this environment, as these technologies are more widely adopted, it is important to provide understanding, so that individuals both in and out of tech can genuinely weigh the pros and cons of such technology.
 
