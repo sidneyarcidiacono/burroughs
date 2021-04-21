@@ -6,17 +6,17 @@
 
 ##### V 1.0 Powered By Brain.js
 
-As you access the site, you land on the Version 1.0 page. Here, there is some basic information about Brain.js.
+Learn about browser based deep learning with Brain.js!
 
 ![Image of Version 1.0 page of Burroughs-Generator](server/static/assets/v1.0page.png)
 
-Add input, and receive your response from Burroughs -- from a net not specifically designed for text-generation:
+Add input, and receive your response from Burroughs:
 
 ![Image of Version 1.0 page with returned response](server/static/assets/v1.0pagewithresponse.png)
 
 ##### V 2.0 Powered By Keras & Tensorflow
 
-Head to the menu in the top right to access Version 2.0. There is some basic information about the Keras LSTM model that was used.
+Head to the menu in the top right to access Version 2.0. Learn a bit about more professional-level deep learning with Keras.
 
 ![Image of Version 2.0 page of Burroughs-Generator](server/static/assets/v2.0page.png)
 
@@ -24,24 +24,25 @@ Add input, and receive your response!
 
 ![Image of Version 2.0 page with response](server/static/assets/v2.0pagewithresponse.png)
 
-The Burroughs-Generator Version 2.0 net is still a little rough! The net was only given one novel (about 278,000 characters) to train on for 10 epochs. This was simply a result of not having much time: each training sequence took between 4-8 hours every time I needed to tweak parameters! As a result, the net unfortunately has not learned or generalized as well as it could have. This project will continue to be updated, and the Keras net will continue to be optimized.
+The Burroughs-Generator Version 2.0 net is still a little rough! The net was only given one novel (about 278,000 characters) to train on for 10 epochs. As a result, the net unfortunately has not learned or generalized as well as it could have. This model will continue undergo further optimizations.
 
-Special thanks to the writers at Keras for their resources on character-level text generating with LSTM. This part of the
-project made possible by their documentation here: https://keras.io/examples/generative/lstm_character_level_text_generation/
-As well as this article: https://towardsdatascience.com/generating-text-using-a-recurrent-neural-network-1c3bfee27a5e
+Special thanks to the following resources, which provided me with invaluable support and starting points:
+
+[Character level text generation with Keras](https://keras.io/examples/generative/lstm_character_level_text_generation/)
+[Text generation with a recurrent neural network](https://towardsdatascience.com/generating-text-using-a-recurrent-neural-network-1c3bfee27a5e)
 
 
 #### Why Burroughs-Generator?
 
-Machine learning has exploded in the last decade due to advances in the field and more and more industries
-clamoring to adapt this new technology with so much potential. While Machine Learning is going to be the future of
-many industries, and has the potential to solve problems that people and societies face, it is intimidating and inaccessible to many. Find any article on neural networks and machine learning and you are faced with technical terms from
-computer science and mathematics. This can make this technology feel scary and malevolent to the average person. As viral videos on YouTube encourage this fear response for clicks, and documentaries appear about the negative effects of the algorithms at work behind the scenes of our social media accounts, it is important to provide understanding, so that individuals can genuinely weigh the pros and cons of such technology.
+Deep learning, a subset of machine learning, has exploded in the last decade. The discovery of effective hardware accelerators like GPUs, and the oftentimes fabulous performance of neural networks on unstructured data (like text!) are largely to thank for this explosion. As more and more industries clamor to adapt deep learning, it is still intimidating and inaccessible to many.
+
+Most articles on neural networks and machine learning are chock full of terms from computer science and mathematics completely alien to the average person. This can make this technology feel scary and malevolent to some, and simply unapproachable to others who may want to work on these technologies but aren't aware they can scale this intellectual barrier-to-entry.
+
+Viral videos online encourage fear responses from lay-persons, throwing around "AI" and "Generalized AI" often as though they're one in the same. In this environment, as these technologies are more widely adopted, it is important to provide understanding, so that individuals both in and out of tech can genuinely weigh the pros and cons of such technology.
 
 The Burroughs-Generator aims to give the average person a chance to interact with this technology in a way that feels
 approachable and playful. Additionally, an About page is presented with further information and resources to understand
-what is going on behind the scenes. It is my hope that such practical and accessible examples of machine learning will
-engage users, and encourage them to learn more and think critically about the information presented to them about this technology.
+what is going on behind the scenes. This experiment was developed as a simple proof of concept with the goal of engaging its users to learn more about these technologies and think critically about their uses and limitations.
 
 ![Image of about page and neural net diagram](server/static/assets/aboutpage.png)
 
@@ -71,4 +72,4 @@ Run:
 python3 app.py
 ```
 
-#### Burroughs-Generator is now running at localhost:5000 <--- copy and paste this into your browser
+#### Burroughs-Generator is now running at http://localhost:5000 <--- copy and paste this into your browser
